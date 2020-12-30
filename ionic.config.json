@@ -1,0 +1,7 @@
+{
+  "name": "BarberBookingApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
