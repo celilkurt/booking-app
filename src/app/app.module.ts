@@ -12,28 +12,29 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { AngularFireStorageModule } from '@angular/fire/storage';
-
-import { AuthService } from './service/auth/auth.service';
-
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
+import { AuthenticationService } from "./../app/shared/authentication-service";
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [ BrowserModule,
-    IonicModule.forRoot(),
+  imports: [
+    BrowserModule, 
+    IonicModule.forRoot(), 
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    AngularFireStorageModule],
+    AngularFirestoreModule
+  ],
   providers: [
     StatusBar,
-      AuthService,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    AuthenticationService,
+    AngularFirestoreModule
   ],
   bootstrap: [AppComponent]
 })

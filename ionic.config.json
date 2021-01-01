@@ -1,7 +1,5 @@
 {
-  "name": "BarberBookingApp",
-  "integrations": {
-    "capacitor": {}
-  },
+  "name": "ionic-form-ui",
+  "integrations": {},
   "type": "angular"
 }

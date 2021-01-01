@@ -1,3 +1,10 @@
+.small-text {
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
 
 .divider {
     display: flex;
@@ -26,16 +33,4 @@
     &:after {
        background: #cccccc;
     }
-}
-
-.auth-form ion-grid,
-.auth-form ion-row {
-    height: 100%;
-    justify-content: center;
-}
-
-.already {
-    display: block;
-    text-align: center;
-    padding-bottom: 10px;
 }
