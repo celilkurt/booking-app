@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from "@angular/router";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { AppointmentService } from './../shared/appointment.service';
 
 @Component({
@@ -27,9 +27,9 @@ export class EditAppointmentPage implements OnInit {
 
   ngOnInit() {
     this.updateBookingForm = this.fb.group({
-      name: [''],
       email: [''],
-      mobile: ['']
+      date: [''],
+      time: ['']
     })
     console.log(this.updateBookingForm.value)
   }

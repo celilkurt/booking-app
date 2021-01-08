@@ -64,6 +64,12 @@ export class AuthenticationService {
     return (user !== null && user.emailVerified !== false) ? true : false;
   }
 
+  getLoggedUser(): User {
+    let user: User;
+    user = JSON.parse(localStorage.getItem('user'));
+    return user;
+  }
+
   // Returns true when user's email is verified
   get isEmailVerified(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
