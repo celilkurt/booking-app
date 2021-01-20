@@ -1,6 +1,6 @@
-import { Component,OnInit } from '@angular/core';
-import { Router } from "@angular/router";
-import { AuthenticationService } from "../shared/authentication-service";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../shared/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -20,19 +20,11 @@ export class LoginPage implements OnInit {
   logIn(email, password) {
     this.authService.SignIn(email.value, password.value)
       .then((res) => {
-        this.router.navigate(['dashboard']);
-
-        /* Mail onaylandıysa hesap açmak için
-        if(this.authService.isEmailVerified) {
-          this.router.navigate(['dashboard']);          
-        } else {
-          window.alert('Email is not verified')
-          return false;
-        }
-        */
+        this.authService.GetRole(res.user.uid);
+        this.router.navigate(['home']);
       }).catch((error) => {
-        window.alert(error.message)
-      })
+        window.alert(error.message);
+      });
   }
 
 }

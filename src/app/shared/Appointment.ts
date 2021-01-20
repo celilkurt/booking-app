@@ -5,11 +5,6 @@ export class Appointment {
     email: any;
     date: any;
     time: any;
-
-    /*constructor(email: string, date: Date, time: any) {
-        this.email = email;
-        this.date = date;
-        this.time = time;
-    }*/
+    bussiness: string;
 }
 

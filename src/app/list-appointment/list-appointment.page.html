@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Doctors App
+      Appointment List
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,16 +9,22 @@
 <ion-content>
   <ion-list class="ios list-ios hydrated">
     <ion-list-header class="ios hydrated">
-      Appointments
+      Your Appointments
     </ion-list-header>
 
     <ion-item *ngFor="let booking of Bookings" class="user-list">
       <ion-label>
         <h5>
-          <ion-icon name="person"></ion-icon> {{booking.name}}
+          <ion-icon name="person"></ion-icon> {{booking.email}}
         </h5>
         <p>
-          <ion-icon name="call"></ion-icon> {{booking.mobile}}
+          <ion-icon name="calendar"></ion-icon> {{booking.date}}
+        </p>
+        <p>
+          <ion-icon name="time"></ion-icon> {{booking.time}}
+        </p>
+        <p>
+          <ion-icon name="time"></ion-icon> {{booking.bussiness}}
         </p>
       </ion-label>
 

@@ -3,7 +3,7 @@ import { Appointment } from '../shared/Appointment';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 import {User} from './user';
 import {FormBuilder} from '@angular/forms';
-import {AuthenticationService} from './authentication-service';
+import {AuthenticationService} from './authentication.service';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +31,11 @@ export class AppointmentService {
     return this.bookingRef;
   }
 
+  getBookingByEmail(email: string) {
+    this.bookingListRef = this.db.list('/appointment');
+    return this.bookingListRef;
+  }
+
   // Get List
   getBookingList() {
     this.bookingListRef = this.db.list('/appointment');
@@ -42,7 +47,8 @@ export class AppointmentService {
     return this.bookingRef.update({
       email: apt.email,
       date: apt.date,
-      time: apt.time
+      time: apt.time,
+      bussiness: apt.bussiness
     });
   }
 

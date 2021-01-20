@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <form>    
+  <form>
     <ion-item lines="full">
       <ion-label position="floating">Email</ion-label>
       <ion-input type="text" #email required></ion-input>
@@ -18,6 +18,23 @@
       <ion-label position="floating">Password</ion-label>
       <ion-input type="password" #password required></ion-input>
     </ion-item>
+
+    <ion-radio-group value="customer" (ionChange)="radioGroupChange($event)">
+      <ion-list-header>
+        <ion-label>Role</ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label>Customer</ion-label>
+        <ion-radio slot="start" value="customer"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Bussiness</ion-label>
+        <ion-radio slot="start" value="bussiness"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
 
     <ion-row>
       <ion-col> 

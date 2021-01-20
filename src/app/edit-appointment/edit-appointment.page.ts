@@ -29,7 +29,8 @@ export class EditAppointmentPage implements OnInit {
     this.updateBookingForm = this.fb.group({
       email: [''],
       date: [''],
-      time: ['']
+      time: [''],
+      bussiness: ['']
     })
     console.log(this.updateBookingForm.value)
   }
@@ -37,7 +38,7 @@ export class EditAppointmentPage implements OnInit {
   updateForm() {
     this.aptService.updateBooking(this.id, this.updateBookingForm.value)
         .then(() => {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/list-appointment']);
         })
         .catch(error => console.log(error));
   }
