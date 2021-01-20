@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { AppointmentService } from './../shared/appointment.service';
+import { AppointmentService } from '../service/appointment.service';
 
 @Component({
   selector: 'app-edit-appointment',

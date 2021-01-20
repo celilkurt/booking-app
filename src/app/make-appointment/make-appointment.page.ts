@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { AppointmentService } from './../shared/appointment.service';
-import { AuthenticationService } from './../shared/authentication.service';
+import { AppointmentService } from '../service/appointment.service';
+import { AuthenticationService } from '../service/authentication.service';
 import { User } from './../shared/user';
 
 @Component({

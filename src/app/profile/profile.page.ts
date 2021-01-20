@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Bussiness } from '../shared/bussiness';
-import { BusinessService} from '../shared/business.service';
-import { AuthenticationService} from '../shared/authentication.service';
+import { BusinessService} from '../service/business.service';
+import { AuthenticationService} from '../service/authentication.service';
 import {Router} from '@angular/router';
 
 @Component({

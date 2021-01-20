@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Appointment } from '../shared/Appointment';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
-import {User} from './user';
+import {User} from '../shared/user';
 import {FormBuilder} from '@angular/forms';
 import {AuthenticationService} from './authentication.service';
 

@@ -15,9 +15,9 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
-import { AuthenticationService } from './../app/shared/authentication.service';
-import {BussinessGuard} from './shared/bussiness.guard';
-import {CustomerGuard} from './shared/customer.guard';
+import { AuthenticationService } from './service/authentication.service';
+import {BussinessGuard} from './route-guard/bussiness.guard';
+import {CustomerGuard} from './route-guard/customer.guard';
 
 @NgModule({
   declarations: [AppComponent],

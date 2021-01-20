@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { CustomerGuard } from './shared/customer.guard';
-import { BussinessGuard } from './shared/bussiness.guard';
+import { CustomerGuard } from './route-guard/customer.guard';
+import { BussinessGuard } from './route-guard/bussiness.guard';
 
 
 const routes: Routes = [

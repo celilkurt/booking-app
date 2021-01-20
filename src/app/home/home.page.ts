@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BusinessService} from '../shared/business.service';
+import { BusinessService} from '../service/business.service';
 
 @Component({
   selector: 'app-home',

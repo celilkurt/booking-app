@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Appointment } from '../shared/Appointment';
-import { AppointmentService } from './../shared/appointment.service';
-import { AuthenticationService} from '../shared/authentication.service';
+import { AppointmentService } from '../service/appointment.service';
+import { AuthenticationService} from '../service/authentication.service';
 
 @Component({
   selector: 'app-home',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '../shared/authentication.service';
+import { AuthenticationService } from '../service/authentication.service';
 import { PickerController } from '@ionic/angular';
 import { PickerOptions } from '@ionic/core';
 import {User} from '../shared/user';

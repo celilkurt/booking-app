@@ -1,7 +1,7 @@
 import {Injectable, NgZone} from '@angular/core';
 import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
 import {Router} from '@angular/router';
-import {Bussiness} from './bussiness';
+import {Bussiness} from '../shared/bussiness';
 
 @Injectable({
   providedIn: 'root'
