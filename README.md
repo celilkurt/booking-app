@@ -3,13 +3,41 @@ Booking App
 
 Müşteri ve işletme şeklinde iki farklı rolün olduğu mobil uygulmadır. Belli sayfalara müşteriler dışındaki belli sayfalara da işletmeler dışındaki üyelere giremiyor ve bunun kontrolü CustomerGuard ve [BussinessGuard](https://github.com/celilkurt/booking-app/blob/main/src/app/route-guard/bussiness.guard.ts) class'larından sağlanıyor. Backend tarafında Firebase Authentication, Firestore ve Firebase Storage kullanıldı.
 
+Giriş yapmayanlarda dahil herkesin erişebildiği sayfalar:
+* Kayıt oluşturma
+* Oturum açma sayfası
+* Ana sayfa (İşletmeler listeleniyor)
+
+Sadece müşterilerin erişebildiği sayfalar:
+* Radevu listeleme (Randevu silme bu sayfa aracılığı ile gerçekleştirilen bir işlemdir)
+* Randevu düzenleme
+
+Sadece işletmelerin erişebildiği sayfalar:
+* İşletme profili sayfası 
+
 Bir kullanıcının kayıt, giriş ve ana sayfa dışındaki herhangi bir sayfaya ulaşabilmesi için giriş yapması gerekmektedir.
+
+### Homepage
+
+![Ana sayfa](https://github.com/celilkurt/booking-app/blob/main/image/homepage.png?raw=true)
+
+
+### Kayıt işlemi
+İşletme rolündeki kullanıcı email, şifre ve rol ile kayıt yapması kullanıcıların bu işletmeden 
+randevu alabilmeleri için yeterli değildir. Bu işleme ek olarak 'profile' sayfasından adres, tip 
+ve işletme ismini girmeleri gerekmektedir. 
+
+![Randevularını görüntüleyebilir](https://github.com/celilkurt/booking-app/blob/main/image/registration.png?raw=true)
+
+
 
 ### Login
 
 ![Giriş sayfası](https://github.com/celilkurt/booking-app/blob/main/image/login.png?raw=true)
 
 
+
+## Müşteri Fonksiyonları
 
 Müşteri rolüne sahip bir üye aşağıdaki işlemleri yapılabilir:
   * Randevu oluşturabilir.
@@ -62,12 +90,7 @@ Randevu listesi sayfasında giriş yapmış olan kullanıcının randevuları li
 
 
 
-### Kayıt işlemi
-İşletme rolündeki kullanıcı email, şifre ve rol ile kayıt yapması kullanıcıların bu işletmeden 
-randevu alabilmeleri için yeterli değildir. Bu işleme ek olarak 'profile' sayfasından adres, tip 
-ve işletme ismini girmeleri gerekmektedir. 
-
-![Randevularını görüntüleyebilir](https://github.com/celilkurt/booking-app/blob/main/image/registration.png?raw=true)
+## İşletme Fonksiyonları
 
 
 ### İşletme Profili Sayfası
@@ -77,7 +100,7 @@ Profil sayfası. İşletmenin randevuya açılması için ek bilgileri tanımlam
 ![Randevularını görüntüleyebilir](https://github.com/celilkurt/booking-app/blob/main/image/bussiness-profile.png?raw=true)
 
 
-
+Not: Projenin en büyük eksiği işletmelerin randevularını görüntüleyememesi, düzenleyememesi ve silememesi. Eğer zaman olsaydı kullanıcı randevularını listelediğim gibi bu işletme için alınan randevuları Firebase'den çekip listelerdim ki bu da daha önce yapılan bir işlemin kopyası.
 
 
 
