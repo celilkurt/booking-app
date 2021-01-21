@@ -5,21 +5,42 @@ Müşteri ve işletme şeklinde iki farklı rolün olduğu mobil uygulmadır. Be
 
 Müşteri rolüne sahip bir üye aşağıdaki işlemleri yapılabilir:
   * Randevu oluşturabilir.
-  
-  ![Randevu oluşturabilir](https://github.com/celilkurt/booking-app/blob/main/image/make-appointment.png?raw=true)
   * Randevularını silebilir.
   * Randevularını düzenleyebilir.
+  * Randevularını görüntüleyebilir.
+  
+  Randevu oluşturma: Randevu oluşturma sayfasına ulaşmak için kullanılacak buton eğer 'customer' rolüne sahipseniz görünüyor ve sayfanın controller'ı [make-appointment.page.ts](https://github.com/celilkurt/booking-app/blob/main/src/app/make-appointment/make-appointment.page.ts) dır. 'custormer' rolüne sahip olmayan birinin erişimini engellemek için [CustomerGuard](https://github.com/celilkurt/booking-app/blob/main/src/app/route-guard/customer.guard.ts) kullanılıyor.
+  
+   ```typescript
+   {
+    path: 'make-appointment/:name',
+    loadChildren: () => import('./make-appointment/make-appointment.module').then( m => m.MakeAppointmentPageModule),
+    canActivate: [CustomerGuard]
+  }
+   ```
+  
+  ![Randevu oluşturabilir](https://github.com/celilkurt/booking-app/blob/main/image/make-appointment.png?raw=true)
+  
+  Randevu düzenleme: İlgili sayfaya randevu listesinde her bir randevunın karşısında oluşan düzenle butonu ile ulaşılabilir. class'ın constructor'ında düzenlenmek istenen randevu bilgileri çekiliyor ve düzenlenmek üzere form'a yerleştiriliyor.
+  
+  ```
+    this.aptService.getBooking(this.id).valueChanges().subscribe(res => {
+      this.updateBookingForm.setValue(res);
+    });
+  ```
+  
+ 
   
   ![Randevularını düzenleyebilir](https://github.com/celilkurt/booking-app/blob/main/image/edit-appointment.png?raw=true)
-* Randevularını görüntüleyebilir.
+
+Randevu listeleme: Randevu listesi sayfasında giriş yapmış olan kullanıcının randevuları listeleniyor.
+
 
 ![Randevularını görüntüleyebilir](https://github.com/celilkurt/booking-app/blob/main/image/appointment-list.png?raw=true)
 
 İşletme rolündeki kullanıcı email, şifre ve rol ile kayıt yapması kullanıcıların bu işletmeden 
 randevu alabilmeleri için yeterli değildir. Bu işleme ek olarak 'profile' sayfasından adres, tip 
-ve işletme ismini girmeleri gerekmektedir.
-
-Randevu oluşturma
+ve işletme ismini girmeleri gerekmektedir. 
 
 ![Randevularını görüntüleyebilir](https://github.com/celilkurt/booking-app/blob/main/image/registration.png?raw=true)
 
